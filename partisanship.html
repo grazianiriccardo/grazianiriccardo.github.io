@@ -221,6 +221,71 @@ th { position: sticky; top: 0; background: var(--tint); color: var(--muted); fon
 }
 @media (prefers-reduced-motion: reduce) { .seat, .rostrum { animation: none; } }
 
+/* Main findings, the measure, and the panels of secondary results (16 October 2026) */
+.findings { max-width: 46rem; margin: 0 0 1.5rem; }
+.findings h2 { font-size: 1.15rem; font-family: inherit; font-weight: 600; margin: 0 0 0.5rem; }
+.findings ol { margin: 0; padding-left: 1.4rem; }
+.findings li { margin: 0 0 0.45rem; line-height: 1.5; }
+.findings li::marker { font-weight: 600; color: var(--chamber); }
+.measure { max-width: 46rem; margin: 0 0 1.5rem; padding: 0.9rem 1.1rem 0.8rem; background: var(--tint); border-left: 3px solid var(--chamber); }
+.measure h2 { font-size: 1.15rem; font-family: inherit; font-weight: 600; margin: 0 0 0.45rem; }
+.measure p { margin: 0 0 0.6rem; line-height: 1.55; }
+.measure details { font-size: 0.9375rem; margin-top: 0.2rem; }
+.measure details > summary { display: inline-flex; align-items: center; gap: 0.4rem; list-style: none; font-size: 0.9375rem; font-weight: 600; padding: 0.35rem 0.85rem; border: 1px solid var(--chamber); border-radius: 999px; background: var(--paper); }
+.measure details > summary::-webkit-details-marker { display: none; }
+.measure details > summary::after { content: "+"; font-weight: 600; }
+.measure details[open] > summary::after { content: "−"; }
+.measure details[open] > summary { margin-bottom: 0.2rem; }
+.measure ol { margin: 0.6rem 0 0.4rem; padding-left: 1.3rem; }
+.measure li { margin: 0 0 0.55rem; line-height: 1.55; }
+.measure .formula { font-family: var(--display); font-size: 1.05rem; margin: 0.35rem 0; overflow-x: auto; white-space: nowrap; }
+details.more { margin: 1rem 0 0.25rem; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 0.1rem 0; font-size: inherit; }
+details.more > summary { list-style: none; display: flex; align-items: baseline; gap: 0.55rem; padding: 0.65rem 0; font-size: 0.9375rem; font-weight: 600; color: var(--chamber); }
+details.more > summary::-webkit-details-marker { display: none; }
+details.more > summary::before { content: "+"; display: inline-block; width: 1rem; text-align: center; font-weight: 600; }
+details.more[open] > summary::before { content: "−"; }
+details.more > summary .n { font-weight: 400; color: var(--muted); font-size: 0.875rem; }
+details.more[open] { padding-bottom: 1rem; }
+details.more > :not(summary):first-of-type { margin-top: 0.25rem; }
+
+details.doc { max-width: 46rem; margin: 0.1rem 0 1rem; font-size: 0.9375rem; }
+details.doc > summary { list-style: none; display: inline-flex; align-items: center; gap: 0.45rem; font-size: 0.875rem; font-weight: 600; color: var(--chamber); }
+details.doc > summary::-webkit-details-marker { display: none; }
+details.doc > summary::before { content: "i"; display: inline-flex; align-items: center; justify-content: center; width: 1.05rem; height: 1.05rem; border: 1.5px solid currentColor; border-radius: 50%; font: italic 700 0.7rem/1 Georgia, serif; }
+details.doc[open] > summary { margin-bottom: 0.4rem; }
+details.doc > p, details.doc > ul { color: var(--ink); margin: 0 0 0.6rem; line-height: 1.55; padding-left: 0; }
+details.doc { border-left: 2px solid var(--rule); padding-left: 0.85rem; }
+details.doc > ul { padding-left: 1.15rem; }
+details.doc li { margin: 0 0 0.35rem; }
+.colophon .cite-foot { max-width: 46rem; }
+
+.toy { margin: 0.2rem 0 0.9rem; padding: 0.8rem 0.9rem 0.6rem; background: var(--paper); border: 1px solid var(--rule); border-radius: 4px; }
+.toy .toy-t { font-weight: 600; margin: 0 0 0.15rem; }
+.toy .toy-s { color: var(--muted); font-size: 0.875rem; margin: 0 0 0.6rem; line-height: 1.45; }
+.toy-scene { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 0.5rem 1rem; align-items: center; margin: 0.4rem 0 0.9rem; }
+.toy-scene .pol { display: flex; align-items: center; gap: 0.5rem; }
+.toy-scene .pol.b { flex-direction: row-reverse; }
+.toy-scene .who { display: flex; flex-direction: column; align-items: center; flex: none; }
+.toy-scene svg { width: 58px; height: 88px; }
+.toy-scene .tag { font-size: 0.8125rem; font-weight: 600; margin-top: 0.15rem; white-space: nowrap; }
+.toy-scene .listener .tag { color: var(--muted); font-weight: 500; }
+.toy-scene .bubble { position: relative; background: var(--tint); border: 1px solid var(--rule); border-radius: 12px; padding: 0.45rem 0.75rem; font-size: 0.9375rem; font-style: italic; line-height: 1.35; margin-bottom: 1.6rem; }
+.toy-scene .pol.a .bubble::before, .toy-scene .pol.b .bubble::before { content: ""; position: absolute; top: 55%; width: 10px; height: 10px; background: var(--tint); border: 1px solid var(--rule); transform: rotate(45deg); }
+.toy-scene .pol.a .bubble::before { left: -6px; border-top: 0; border-right: 0; }
+.toy-scene .pol.b .bubble::before { right: -6px; border-bottom: 0; border-left: 0; }
+@media (max-width: 34rem) { .toy-scene { grid-template-columns: minmax(0, 1fr); gap: 0.2rem; } .toy-scene .listener { justify-self: center; } .toy-scene svg { width: 46px; height: 70px; } .toy-scene .bubble { margin-bottom: 1.3rem; } }
+.toy-grid { display: grid; grid-template-columns: minmax(6.5rem, 9rem) minmax(5rem, 1fr) minmax(5.6rem, 7.5rem); gap: 0.15rem 0.75rem; align-items: center; font-size: 0.875rem; }
+.toy-grid .h { font-size: 0.75rem; font-weight: 600; color: var(--muted); padding-bottom: 0.2rem; border-bottom: 1px solid var(--rule); }
+.toy-grid .ph { font-weight: 600; padding: 0.45rem 0; border: 0; display: block; }
+.toy-grid .bars { display: grid; gap: 3px; padding: 0.45rem 0; }
+.toy-grid .bar { display: flex; align-items: center; gap: 0.35rem; font-size: 0.75rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.toy-grid .bar i { display: block; height: 0.6rem; border-radius: 0 3px 3px 0; }
+.toy-grid .g { font-variant-numeric: tabular-nums; line-height: 1.3; }
+.toy-grid .g b { font-weight: 600; }
+.toy-grid .row-line { grid-column: 1 / -1; border-top: 1px solid var(--rule); }
+.toy .toy-sum { margin: 0.6rem 0 0; font-size: 0.9375rem; line-height: 1.55; }
+.toy .calc { font-variant-numeric: tabular-nums; }
+
 /* Editorial hierarchy introduced in the revised dashboard. */
 .interpretation-note { max-width: 51rem; border-left: 2px solid var(--rule); padding: 0.35rem 0.9rem;
   margin: 0.5rem 0 1.35rem; color: var(--muted); font-size: 0.91rem; line-height: 1.55; }
@@ -332,8 +397,66 @@ nav.toc { gap: 0.4rem 1.2rem; }
   <h1>Partisanship in Belgian parliamentary speech, 1831–2025</h1>
   <p class="byline">From <a href="research.html">“Partisanship in Belgian Parliamentary Speech: Evidence from the Chamber of Representatives, 1831–2025”</a></p>
   <p class="lead" id="lead"></p>
-  <p class="intro">These figures measure <strong>how distinctive the language of political groups is</strong>. Differences can come from the topics debated, the words chosen and the members who speak. A positive score means that a phrase tells more about a speaker’s group than the random-label benchmark does.</p>
-  <p class="interpretation-note"><strong>Reading the charts.</strong> A net value of +0.50 percentage points means that the classification score of a two-word phrase is 0.50 points above its shuffled-label benchmark. The bands labelled “80%” show the variation across subsamples of speakers.</p>
+  <div class="measure" id="measure">
+    <h2>How the measure works</h2>
+    <p>Take one two-word phrase from a speech. A listener who hears only this phrase, and knows how often each group uses it, can say how likely it is that the speaker belongs to one group or the other. Before hearing anything the odds are 50–50. The score of a period is the probability that the listener gives to the speaker’s true group, averaged over all the phrases spoken. It rises as the two groups use more different words.</p>
+    <figure class="toy" id="toy">
+      <p class="toy-t">An example with invented numbers</p>
+      <p class="toy-s">Politicians of two groups, A and B, use four phrases. The bars give the share of each group’s phrases that each phrase takes. The last column is the probability a listener gives to each group after hearing only that phrase.</p>
+      <div class="toy-scene" aria-hidden="true">
+        <div class="pol a"><div class="who"><svg viewBox="0 0 48 72"><g fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="10" r="7" fill="var(--ink)"/><line x1="24" y1="17" x2="24" y2="45"/><polyline points="38,10 30,20 24,24"/><line x1="24" y1="24" x2="10" y2="37"/><line x1="24" y1="45" x2="15" y2="68"/><line x1="24" y1="45" x2="33" y2="68"/></g><circle cx="24" cy="32" r="8" fill="var(--s1)"/><text x="24" y="32" dy="0.35em" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">A</text></svg><span class="tag" style="color:var(--s1)">Politician A</span></div><div class="bubble">“… free schools …”</div></div>
+        <div class="who listener"><svg viewBox="0 0 48 72"><g fill="none" stroke="var(--muted)" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="14" r="7"/><line x1="24" y1="21" x2="24" y2="47"/><polyline points="12,40 24,28 36,40"/><line x1="24" y1="47" x2="16" y2="68"/><line x1="24" y1="47" x2="32" y2="68"/></g><text x="24" y="15" dy="0.35em" text-anchor="middle" font-size="10" font-weight="700" fill="var(--muted)">?</text></svg><span class="tag">Listener: A or B?</span></div>
+        <div class="pol b"><div class="who"><svg viewBox="0 0 48 72"><g fill="none" stroke="var(--ink)" stroke-width="2.6" stroke-linecap="round"><circle cx="24" cy="10" r="7" fill="var(--ink)"/><line x1="24" y1="17" x2="24" y2="45"/><polyline points="10,10 18,20 24,24"/><line x1="24" y1="24" x2="38" y2="37"/><line x1="24" y1="45" x2="15" y2="68"/><line x1="24" y1="45" x2="33" y2="68"/></g><circle cx="24" cy="32" r="8" fill="var(--s2)"/><text x="24" y="32" dy="0.35em" text-anchor="middle" font-size="10" font-weight="700" fill="#FFFFFF">B</text></svg><span class="tag" style="color:var(--s2)">Politician B</span></div><div class="bubble">“… workers’ wages …”</div></div>
+      </div>
+      <div class="toy-grid" role="table" aria-label="Invented example: four phrases, their shares in the speech of groups A and B, and the listener's guess">
+        <div class="h">Phrase</div><div class="h">Share of the group’s phrases</div><div class="h">A listener who hears it says</div>
+        <div class="ph">“free schools”</div>
+        <div class="bars"><span class="bar"><i style="width:75%;background:var(--s1)"></i>30%</span><span class="bar"><i style="width:25%;background:var(--s2)"></i>10%</span></div>
+        <div class="g"><b>75%</b> A</div>
+        <div class="row-line" aria-hidden="true"></div>
+        <div class="ph">“workers’ wages”</div>
+        <div class="bars"><span class="bar"><i style="width:25%;background:var(--s1)"></i>10%</span><span class="bar"><i style="width:75%;background:var(--s2)"></i>30%</span></div>
+        <div class="g"><b>75%</b> B</div>
+        <div class="row-line" aria-hidden="true"></div>
+        <div class="ph">“railway line”</div>
+        <div class="bars"><span class="bar"><i style="width:75%;background:var(--s1)"></i>30%</span><span class="bar"><i style="width:75%;background:var(--s2)"></i>30%</span></div>
+        <div class="g">50–50</div>
+        <div class="row-line" aria-hidden="true"></div>
+        <div class="ph">“the budget”</div>
+        <div class="bars"><span class="bar"><i style="width:75%;background:var(--s1)"></i>30%</span><span class="bar"><i style="width:75%;background:var(--s2)"></i>30%</span></div>
+        <div class="g">50–50</div>
+      </div>
+      <p class="toy-sum">“Free schools” is said three times as often by A, so a listener who hears it gives A 30 / (30 + 10) = 75%. Shared phrases leave the listener at 50–50. When a member of A speaks, the listener gives A on average <span class="calc">0.30 × 75% + 0.10 × 25% + 0.60 × 50% = 55%</span>, and the same holds for B. The score is 55%, five points above a blind guess. In real debates almost every phrase is shared by both groups, so the scores stay close to 50%: <span id="toy-max">at most about 50.8%</span> in the three main divides.</p>
+    </figure>
+    <p>A statistical model finds some difference even between groups formed at random. So the same model is estimated again with the group labels shuffled, and its score is subtracted. Most charts show this <strong>net partisanship</strong>, in percentage points: at +0.50 pp, a phrase moves the listener 0.5 points further towards the true group than it does with shuffled labels. <span id="toy-real"></span> The 80% bands show how much the estimate moves across random subsamples of speakers.</p>
+    <p>The score measures differences in wording. They can come from the topics debated, the words chosen and the members who speak, and they say nothing directly about how far apart the groups are in their policy positions.</p>
+    <details id="measure-how">
+      <summary>How the estimate is computed</summary>
+      <ol>
+        <li><strong>Text.</strong> The official plenary reports of the Chamber, 1831–2025: the <i>Annales parlementaires</i> and, from 1999, the integral reports. The text is segmented into speeches, linked to speakers, parties and constituencies where they are identified. Coverage is incomplete in some periods, most of all in 1832–1843 and 1992–1995. Words are stemmed, common words are removed and the text is cut into two-word phrases. Phrases without political content are left out: procedural formulas, courtesies and titles, names of people, parties and groups, amounts and dates. A law with its year and an age can remain, as in “67 ans”.</li>
+        <li><strong>Groups and periods.</strong> Each divide splits the members into two groups, A and B, for example the Catholic family and all the other parties. Speeches are grouped into periods of about two years. French and Dutch have separate vocabularies, and after the national parties split (1968–1978) each party is compared only with parties of its own language. A period needs at least 20 speakers in each group (15 in the comparisons of two party families).</li>
+        <li><strong>Phrase frequencies.</strong> For each phrase, a multinomial logit model estimates how often each group uses it in each period, with gender and province as controls (Gentzkow, Shapiro and Taddy 2019, estimated with the Poisson approximation). A lasso penalty on the group effects, chosen for each phrase by the Bayesian Information Criterion, pulls the group difference of rare phrases towards zero. With raw counts, a phrase used once would look perfectly partisan.</li>
+        <li><strong>Score.</strong> Let q<sub>A,j</sub> and q<sub>B,j</sub> be the estimated shares of phrase j in the speech of the two groups. A listener who starts at 50–50 and hears phrase j gives group A the probability
+          <div class="formula">ρ<sub>j</sub> = q<sub>A,j</sub> / (q<sub>A,j</sub> + q<sub>B,j</sub>).</div>
+          Partisanship is the expected probability given to the speaker’s true group:
+          <div class="formula">π = ½ Σ<sub>j</sub> q<sub>A,j</sub> ρ<sub>j</sub> + ½ Σ<sub>j</sub> q<sub>B,j</sub> (1 − ρ<sub>j</sub>),</div>
+          averaged over the speakers of the period. It equals 0.5 when the two groups use every phrase equally often. The French and Dutch scores are averaged with weights equal to each language’s share of the phrases.</li>
+        <li><strong>Benchmark.</strong> The whole estimation is repeated after shuffling the group labels among the speakers of each period, with the size of each group kept. Net partisanship is the real score minus this random score.</li>
+        <li><strong>Uncertainty.</strong> For each period, the model is estimated again on 100 subsamples with 20% of the speakers. They give the 80% intervals, which show how much an estimate moves with the speakers included. A change from one period to another would need the uncertainty of the difference, which the intervals of single periods do not give. A period counts as above its benchmark when the lower bound of the real series is above the upper bound of the random series. This is a descriptive rule, and the intervals are not corrected for the many comparisons.</li>
+        <li><strong>One minute of speech.</strong> The probability of guessing the group after about 33 phrases, roughly one minute, treats the phrases as independent.</li>
+      </ol>
+      <p>The paper gives the details in its section “Model and estimation”. Each section of the page has its own notes, in a panel like this one.</p>
+    </details>
+  </div>
+  <div class="findings" id="findings">
+    <h2>Main findings</h2>
+    <ol>
+      <li>Catholic and non-Catholic members use similar wording under census suffrage. They become easier to tell apart in the decade after the Socialists enter the Chamber in 1894. Since the early 1990s the religious divide has stayed within its random benchmark (<a href="#divides">chart</a>).</li>
+      <li>The left is most distinct from the other parties between the 1890s and 1940, and again in 2024–2025. Government and opposition are most distinct between the wars, and since 1995 their wording is above the benchmark in more than half of the periods (<a href="#divides">chart</a>).</li>
+      <li>Even at the peaks of the three main divides, one minute of speech would reveal a speaker’s group with a probability of at most <span id="find-minute">63–66%</span>. The peaks found for the United States and Finland are higher (<a href="#minute">comparison</a>).</li>
+      <li>Votes and words change at different speeds. Coalition partners start to vote alike as soon as they enter government, while their wording changes little more than placebo vocabularies do (<a href="#events">event studies</a>).</li>
+    </ol>
+  </div>
   <div class="kpis" id="kpis"></div>
   <nav class="toc" aria-label="Explore dashboard">
     <a href="#history">Historical overview</a>
@@ -341,7 +464,6 @@ nav.toc { gap: 0.4rem 1.2rem; }
     <a href="#language">Topics &amp; words</a>
     <a href="#behaviour">Speech &amp; voting</a>
     <a href="#context">Events &amp; context</a>
-    <a href="#method">Methods &amp; data</a>
   </nav>
   <div aria-hidden="true" hidden><a id="toc-votes" href="#votes"></a><a id="toc-regions" href="#regions"></a><a id="toc-events" href="#events"></a><a id="toc-economy" href="#economy"></a><a id="toc-emotions" href="#emotions"></a></div>
 </div>
@@ -355,7 +477,19 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   <section id="divides">
     <h2>The main divides</h2>
-    <p class="intro">How much does a two-word phrase reveal about a speaker’s political group? The model reports a classification percentage, where 50% is chance for these balanced two-group comparisons. We subtract the value obtained when group labels are shuffled. The result is the excess classification score, in percentage points.</p>
+    <p class="intro">Choose a divide to see the score of the real groups next to its shuffled-label benchmark, or the difference between the two. Fifty per cent is a blind guess.</p>
+    <details class="doc" id="doc-divides">
+      <summary>How to read these estimates</summary>
+      <p><strong>What the score captures.</strong> The score measures how distinctive the wording is. Levels and trends can reflect shifts in topic, language, individual speakers, party membership, OCR coverage or the conventions of parliamentary reporting. Comparisons over time describe the series as they are, with all these changes in composition included.</p>
+      <p><strong>Limits of inference.</strong> Most intervals in the charts are speaker-subsampling ranges. Some differences in the question box combine the ranges of single periods as if they were independent, although the same speakers appear in several periods. Many party pairs and events are compared, and the 80% intervals are not adjusted for multiple testing. The event-study section reports which results keep a false discovery rate below 10%.</p>
+      <ul>
+        <li>Periods group parliamentary sessions (usually around two years). Shaded columns mark limited coverage of sittings in 1832–1843 and 1992–1995. Apparent changes in these years may partly reflect missing records.</li>
+        <li>French and Dutch phrases are analysed separately and combined for the main historical divides. For comparisons between modern parties, Dutch and French are shown separately.</li>
+        <li>Left–right compares socialists and communists with liberals, N-VA and the radical right. Right–others compares the latter with all other parties. Flemish–Walloon compares members of the same parties, in French only, so it ends when the national parties split along language lines (1968–1978). Women–men compares women and men of the same party family.</li>
+        <li>Vertical lines mark plural voting (1894), proportional representation (1900), equal male suffrage (1919), women's suffrage (1949), the split of the national parties (1968–1978) and the federal Chamber (1995).</li>
+        <li>Each group needs at least 20 speakers in a period. Periods below this minimum are left blank.</li>
+      </ul>
+    </details>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-div">Divide</span><div class="seg" role="group" aria-labelledby="lab-div" id="ctl-div"></div></div>
       <div class="ctl"><span class="lab" id="lab-view">Show</span><div class="seg" role="group" aria-labelledby="lab-view" id="ctl-view">
@@ -368,14 +502,34 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <div class="chart" id="div-chart"></div>
       <details id="div-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
-    <h3>All divides on one scale</h3>
-    <p class="intro">All panels share one vertical scale over the full observed range. Net scores are in percentage points above the shuffled-label benchmark. A dot marks a period in which the 80% speaker-subsampling ranges of the real and the shuffled-label series do not overlap.</p>
-    <div class="grid" id="div-grid"></div>
+    <details class="more" id="more-divides">
+      <summary>All seven divides on one scale</summary>
+      <p class="intro">All panels share one vertical scale over the full observed range. Net scores are in percentage points above the shuffled-label benchmark. A dot marks a period in which the 80% speaker-subsampling ranges of the real and the shuffled-label series do not overlap.</p>
+      <div class="grid" id="div-grid"></div>
+    </details>
   </section>
 
   <section id="families">
     <h2>Differences between party families</h2>
-    <p class="intro">Compare the language of any two party families. Each cell shows how easily a phrase distinguishes them, after subtracting the random-label benchmark. Values are averaged over the observed periods of each era. The eras differ from the periods of the economic comparison further down. Select a cell to see its history. The paper lists the parties in each family, with the years in which their labels appear in the register (Online Appendix, table “Party families, party labels and groups in each comparison”).</p>
+    <p class="intro">How easy is it to tell apart the language of two party families, taking all the pairs of families in the Chamber together? The multiparty index answers for each period. The panel below compares any two families.</p>
+    <details class="doc" id="doc-families">
+      <summary>Notes on comparisons of two parties or families</summary>
+      <ul>
+        <li>Minimum speakers on each side: 15 for party-family and topic comparisons, <span class="nmin-n">10</span> for individual party pairs, and 8 for the comparisons of today’s parties against the rest. Periods below these minimums are left blank.</li>
+        <li>The comparison of two parties or families is symmetric: A against B equals B against A. It cannot say which of the two changed.</li>
+        <li>The families and their predecessors are historical groupings. The paper lists the parties in each family, with the years in which their labels appear in the register (Online Appendix, table “Party families, party labels and groups in each comparison”).</li>
+        <li>The eras of this chart differ from the periods of the economic comparison further down.</li>
+      </ul>
+    </details>
+    <figure class="card" id="fig-mp">
+      <p class="t">Multiparty index</p>
+      <p class="s">Weighted average ability to distinguish two different party families. Each pair is weighted by its numbers of speakers, and the number, size and identity of the families change over time, so the composition behind the series changes too.</p>
+      <div class="legend" id="mp-legend"></div>
+      <div class="chart" id="mp-chart"></div>
+    </figure>
+    <details class="more" id="more-families">
+    <summary>Compare any two party families</summary>
+    <p class="intro">Each cell shows how easily a phrase distinguishes two families, after subtracting the random-label benchmark, averaged over the observed periods of each era. Select a cell to see its history.</p>
     <div class="controls"><div class="ctl"><span class="lab" id="lab-era">Era</span><div class="seg" role="group" aria-labelledby="lab-era" id="ctl-era"></div></div></div>
     <div class="two">
       <figure class="card" id="fig-heat">
@@ -391,12 +545,7 @@ nav.toc { gap: 0.4rem 1.2rem; }
         <div class="chart" id="pair-chart"></div>
       </figure>
     </div>
-    <figure class="card" id="fig-mp">
-      <p class="t">Multiparty index</p>
-      <p class="s">Weighted average ability to distinguish two different party families. Each pair is weighted by its numbers of speakers, and the number, size and identity of the families change over time, so the composition behind the series changes too.</p>
-      <div class="legend" id="mp-legend"></div>
-      <div class="chart" id="mp-chart"></div>
-    </figure>
+    </details>
   </section>
 
   <section id="members" hidden>
@@ -452,12 +601,15 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   <section id="questions" hidden>
     <h2>Questions</h2>
+    <details class="more" id="more-questions">
+    <summary>Short answers to questions about the divides and today’s parties</summary>
     <p class="intro" id="q-intro"></p>
     <p class="qhead" id="lab-qd">The main divides</p>
     <div class="qbtns" role="group" aria-labelledby="lab-qd" id="ctl-qd"></div>
     <p class="qhead" id="lab-q">Pairs of today's parties</p>
     <div class="qbtns" role="group" aria-labelledby="lab-q" id="ctl-q"></div>
     <div class="callout" id="focal" aria-live="polite"></div>
+    </details>
   </section>
 
   <div class="chapter" id="language">
@@ -482,7 +634,11 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   <section id="topics">
     <h2>Linguistic differences within topics</h2>
-    <p class="intro">Each speech is assigned to one of 24 topics, grouped into nine policy areas. A language model (gpt-6-luna) labelled a sample of passages, and two classifiers trained on these labels, CamemBERT for French and RobBERT for Dutch, classified all 3.1 million passages. On passages held out from training, they give the language model’s label in 74% of cases. A speech can touch several topics and is counted under its main one. Each chart compares wording within a topic. Values are net of the random-label benchmark, and the grey series is all speech.</p>
+    <p class="intro">Each speech is assigned to one of 24 topics, grouped into nine policy areas. Each chart compares wording within a topic. Values are net of the random-label benchmark, and the grey series is all speech.</p>
+    <details class="doc" id="doc-topics">
+      <summary>How topics are assigned</summary>
+      <p>A companion module assigns a topic to every speech. A language model (gpt-6-luna) first labels agenda items from a sample of sittings, together with the subject keywords of the legislative files. These labels are grouped into 23 topics and a residual category for procedure. The language model then labels samples of passages of up to 300 words with this codebook. Two classifiers trained on those labels, CamemBERT for French and RobBERT-2023 for Dutch, classify all 3.1 million passages of the corpus. On passages held out from training, they give the language model’s label in 74% of cases. Each speech takes the topic with the highest mean probability across its passages, so a speech that covers several topics is counted under its main one. The 24 categories are grouped into nine policy areas. Partisanship by topic is estimated by legislature within the speeches of each topic or area, with the same model and random-label benchmark as the main series. These estimates have no intervals, so single legislatures are only indicative.</p>
+    </details>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-tdiv">Divide</span><div class="seg" role="group" aria-labelledby="lab-tdiv" id="ctl-tdiv"></div></div>
       <div class="ctl"><span class="lab" id="lab-tres">Procedure and residual</span><div class="seg" role="group" aria-labelledby="lab-tres" id="ctl-tres">
@@ -496,7 +652,7 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   <section id="agenda">
     <h2>What parliament discusses</h2>
-    <p class="intro">The first chart shows the share of speech devoted to each policy area. The second weights each area’s net linguistic distinctiveness by its share of phrases. Overall partisanship is estimated separately, so the weighted figures need not add up to it. Each weighted figure multiplies two estimates, so it varies a lot from one legislature to the next, and the paper does not report this weighting. Switch between legislatures and historical eras.</p>
+    <p class="intro">The share of speech devoted to each policy area, by legislature or by historical era.</p>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-aunit">By</span><div class="seg" role="group" aria-labelledby="lab-aunit" id="ctl-aunit">
         <button type="button" data-v="leg">Legislature</button><button type="button" data-v="era">Era</button></div></div>
@@ -510,6 +666,9 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <div class="chart" id="agenda-chart"></div>
       <details id="agenda-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
+    <details class="more" id="more-agenda">
+    <summary>How do topic shares weight linguistic differences?</summary>
+    <p class="intro">This chart weights each area’s net linguistic distinctiveness by its share of phrases. Overall partisanship is estimated separately, so the weighted figures need not add up to it. Each weighted figure multiplies two estimates, so it varies a lot from one legislature to the next, and the paper does not report this weighting.</p>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-adiv">Divide</span><div class="seg" role="group" aria-labelledby="lab-adiv" id="ctl-adiv"></div></div>
       <div class="ctl"><span class="lab" id="lab-ashow">Show</span><div class="seg" role="group" aria-labelledby="lab-ashow" id="ctl-ashow">
@@ -522,6 +681,7 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <div class="chart" id="contrib-chart"></div>
       <details id="contrib-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
+    </details>
   </section>
 
   <div class="chapter" id="behaviour">
@@ -532,7 +692,11 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   <section id="votes" hidden>
     <h2>Speech and voting disagreement</h2>
-    <p class="intro">Do groups that speak more differently also vote more differently? Here linguistic partisanship is set beside the division in roll-call votes, measured as <strong>between-group voting distance</strong>. For each roll call, this is the absolute difference between the two groups’ shares of yes votes among the votes cast for and against, from 0 (identical shares) to 1 (unanimously opposed), averaged over the roll calls of the period. The correlations describe how the two measures move together. Periods with fewer than 20 roll calls, or with low coverage of the sittings, are left out.</p>
+    <p class="intro">Do groups that speak more differently also vote more differently? Here linguistic partisanship is set beside the division in roll-call votes, measured as <strong>between-group voting distance</strong>: 0 when the two groups vote yes in the same proportion, 1 when they vote unanimously against each other. The correlations describe how the two measures move together.</p>
+    <details class="doc" id="doc-votes">
+      <summary>How roll-call votes are measured</summary>
+    <p>Roll-call votes are read from the same reports, which list the members voting yes, no or abstaining, and are linked to the member register. For each roll call, <strong>between-group voting distance</strong> is the absolute difference between the two groups’ shares of “yes” votes among the “yes” and “no” votes cast: |Yes<sub>A</sub>/(Yes<sub>A</sub>+No<sub>A</sub>) − Yes<sub>B</sub>/(Yes<sub>B</sub>+No<sub>B</sub>)|. Abstentions are excluded, and so are roll calls without enough votes for or against in both groups. Zero means identical yes shares, and one means unanimously opposed votes. The period measure averages this distance over the roll calls that qualify. Periods with fewer than 20 roll calls, or with low coverage of the sittings, are left out of the charts and the correlations. The groups are those of the speech series: Catholics, the left, the right and the government against all others, the left against the right, pairs of parties since 1979, women and men of the same party, and, until the national parties split, members of the same party elected in Flemish and in Walloon districts. The paper reports the Catholic, left and government comparisons. The others follow the same rules.</p>
+    </details>
     <div class="controls"><div class="ctl"><span class="lab" id="lab-vdiv">Divide</span><div class="seg" role="group" aria-labelledby="lab-vdiv" id="ctl-vdiv"></div></div></div>
     <figure class="card" id="fig-vdiv">
       <p class="t" id="vdiv-title"></p>
@@ -543,6 +707,8 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <details id="vdiv-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
 
+    <details class="more" id="more-votes">
+    <summary>Pairs of parties since 1979, and Flemish and Walloon members of the same party</summary>
     <div id="vpairs-wrap">
       <h3>Pairs of parties, since 1979</h3>
       <p class="intro">Each point is a pair of parties speaking the same language in one period: the division between the two parties in roll calls and the difference in their speech, as in “Party by party”. Parties in the same coalition usually vote alike, so the pairs on the same side, both in government or both in opposition for most of the period, are shown separately.</p>
@@ -575,6 +741,7 @@ nav.toc { gap: 0.4rem 1.2rem; }
         <p class="note" id="vreg-note"></p>
       </figure>
     </div>
+    </details>
   </section>
 
   <section id="regions" hidden>
@@ -594,6 +761,8 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <details id="rvotes-table"><summary>Show the data</summary><div class="tbl"></div></details>
       <details id="rgov-table"><summary>Show the governments and their seats</summary><div class="tbl"></div></details>
     </figure>
+    <details class="more" id="more-regions">
+    <summary>Which voting issues divide the two regions, and what they speak about</summary>
     <figure class="card" id="fig-rsubj">
       <p class="t" id="rsubj-title">Which voting issues divide the two regions?</p>
       <p class="s" id="rsubj-sub"></p>
@@ -608,6 +777,7 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <div class="tbl open" id="rtopics-table"></div>
       <p class="note" id="ragenda-note"></p>
     </figure>
+    </details>
   </section>
 
   <div class="chapter" id="context">
@@ -627,6 +797,8 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <p class="note" id="instper-note"></p>
       <details id="instper-table"><summary>Show the estimates for all divides</summary><div class="tbl"></div></details>
     </figure>
+    <details class="more" id="more-institutions">
+    <summary>Change around each reform</summary>
     <figure class="card" id="fig-instwin">
       <p class="t" id="instwin-title">Change around each reform</p>
       <p class="s" id="instwin-sub"></p>
@@ -634,12 +806,12 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <p class="note" id="instwin-note"></p>
       <details id="instwin-table"><summary>Show the estimates for all divides</summary><div class="tbl"></div></details>
     </figure>
+    </details>
   </section>
 
   <section id="events" hidden>
     <h2>Coalitions, elections and reforms</h2>
     <p class="intro" id="ev-intro"></p>
-    <p class="intro" id="ev-how"></p>
     <p class="interpretation-note"><strong>Event-study evidence.</strong> The results below are associations. Each card gives nominal p-values and says whether a result keeps a false discovery rate below 10% within its family of tests. Exploratory estimates are shown too.</p>
     <figure class="card" id="fig-evcoal">
       <p class="t">Governing together: agreement in roll calls around changes of coalition</p>
@@ -650,13 +822,6 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <p class="design" id="evcoal-design"></p>
       <details id="evcoal-table"><summary>Show the estimates</summary><div class="tbl"></div></details>
     </figure>
-    <figure class="card" id="fig-evsingle">
-      <p class="t">Single changes of coalition and shocks</p>
-      <p class="s" id="evsingle-sub"></p>
-      <div class="tbl" id="evsingle-table"></div>
-      <p class="note" id="evsingle-note"></p>
-      <p class="design" id="evsingle-design"></p>
-    </figure>
     <figure class="card" id="fig-evelect">
       <p class="t" id="evelect-title">The Chamber after elections: reactions in the sittings</p>
       <div class="controls"><div class="ctl"><span class="lab" id="lab-evev">Events</span><div class="seg" role="group" aria-labelledby="lab-evev" id="ctl-evev"></div></div></div>
@@ -664,8 +829,19 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <div class="legend" id="evelect-legend"></div>
       <div class="chart" id="evelect-chart"></div>
       <p class="note" id="evelect-note"></p>
+      <p class="note">The reactions are those noted by the stenographers: <a href="#doc-emotions" data-doc="doc-emotions">how they are coded</a>.</p>
       <p class="design" id="evelect-design"></p>
       <details id="evelect-table"><summary>Show the estimates</summary><div class="tbl"></div></details>
+    </figure>
+    <details class="more" id="more-events">
+    <summary>Other event studies, with their designs <span class="n">(exploratory: none keeps a false discovery rate below 10%)</span></summary>
+    <p class="intro" id="ev-how"></p>
+    <figure class="card" id="fig-evsingle">
+      <p class="t">Single changes of coalition and shocks</p>
+      <p class="s" id="evsingle-sub"></p>
+      <div class="tbl" id="evsingle-table"></div>
+      <p class="note" id="evsingle-note"></p>
+      <p class="design" id="evsingle-design"></p>
     </figure>
     <figure class="card" id="fig-evref">
       <p class="t">Electoral reforms: the change at every election since 1831</p>
@@ -706,11 +882,16 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <details id="evits-table"><summary>Show selected comparisons (uncorrected p ≤ 0.05)</summary><div class="tbl"></div></details>
     </figure>
     <p class="intro" id="ev-other"></p>
+    </details>
   </section>
 
   <section id="emotions" hidden>
     <h2>Recorded reactions in the Chamber</h2>
     <p class="intro">This section turns from wording to how members treat each other. It uses what the stenographers noted in the Chamber, disorder (interruptions, noise, protests and uproar) and approval, and the chair’s calls to order. It also counts the references by name from one member to another. The coding of emotions in the speeches themselves, such as anger, is in preparation.</p>
+    <details class="doc" id="doc-emotions">
+      <summary>How reactions and references are coded</summary>
+    <p>A module of the project reads the stage directions written by the stenographers: disorder (interruptions, noise, protests and uproar), approval and laughter, and the chair’s calls to order and censures. Rates are per 100,000 words spoken by members, the chair excluded, or per 100 sittings. The module also finds references by name from one member to another, links them to members and ministers, and records whether they cross party families or language communities, compared with the share expected if speakers and targets were paired at random. These measures need no language model and cover the whole period. For the investiture and State of the Union debates since 1961, they give intervention counts close to those of Peeters and Lefever (2026) in most debates and similar shares of references across the language border. The coding of emotions in the speeches (eight categories, such as anger and fear) and of the tone of references (no attack, civil attack, uncivil attack) is in preparation: a language model has labelled samples of passages, two human coders will check part of them, and a multilingual classifier will extend the labels to all speeches.</p>
+    </details>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-etemp">Show</span><div class="seg" role="group" aria-labelledby="lab-etemp" id="ctl-etemp">
         <button type="button" data-v="disorder">Disorder</button><button type="button" data-v="cto">Calls to order</button><button type="button" data-v="hostile">Share classified as disorder</button></div></div>
@@ -724,6 +905,8 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <details id="etemp-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
 
+    <details class="more" id="more-emotions">
+    <summary>Disorder by group, disorder and partisanship, and references between groups</summary>
     <h3>During whose speeches was disorder recorded?</h3>
     <div class="controls">
       <div class="ctl"><span class="lab" id="lab-egrp">Compare</span><div class="seg" role="group" aria-labelledby="lab-egrp" id="ctl-egrp">
@@ -758,25 +941,14 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <p class="note" id="eref-note"></p>
       <details id="eref-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
+    </details>
     <p class="src" id="emo-source"></p>
   </section>
 
   <section id="economy" hidden>
     <h2>Economic conditions and linguistic differences</h2>
     <p class="intro" id="econ-lead"></p>
-    <figure class="card" id="fig-gdp">
-      <p class="t" id="gdp-title">GDP per capita</p>
-      <p class="s">Real GDP per capita of Belgium in 2011 dollars, on a log scale: each gridline is twice the one below. Shaded: years without sittings of the Chamber (the two world wars).</p>
-      <div class="chart" id="gdp-chart"></div>
-    </figure>
     <div class="controls"><div class="ctl"><span class="lab" id="lab-ediv">Divide</span><div class="seg" role="group" aria-labelledby="lab-ediv" id="ctl-ediv"></div></div></div>
-    <figure class="card" id="fig-egrowth">
-      <p class="t" id="egrowth-title">Growth and partisanship, period by period</p>
-      <p class="s">Top: mean annual growth of GDP per capita in each period, in per cent, with each year weighted by the days of the period that fall in it. Periods that include a year of war or occupation are left out. Bottom: net partisanship of the divide, in percentage points. A dot marks a period whose 80% interval lies above the random-label benchmark.</p>
-      <div class="legend" id="egrowth-legend"></div>
-      <div class="chart" id="egrowth-chart"></div>
-      <div class="chart" id="enet-chart"></div>
-    </figure>
     <figure class="card" id="fig-escatter">
       <p class="t" id="escatter-title">Within the institutional periods</p>
       <p class="s">Each point is a period: growth of GDP per capita (horizontal) and net partisanship (vertical), both as deviations from the mean of their institutional period (1831–1893, 1894–1918, 1919–1944, 1945–1970, 1971–1994, 1995–2025), so that the long-run changes of the two series do not drive the comparison.</p>
@@ -784,6 +956,21 @@ nav.toc { gap: 0.4rem 1.2rem; }
       <p class="note" id="escatter-note"></p>
       <details id="econ-table"><summary>Show the data</summary><div class="tbl"></div></details>
     </figure>
+    <details class="more" id="more-economy">
+    <summary>GDP per capita, and growth and partisanship period by period</summary>
+    <figure class="card" id="fig-gdp">
+      <p class="t" id="gdp-title">GDP per capita</p>
+      <p class="s">Real GDP per capita of Belgium in 2011 dollars, on a log scale: each gridline is twice the one below. Shaded: years without sittings of the Chamber (the two world wars).</p>
+      <div class="chart" id="gdp-chart"></div>
+    </figure>
+    <figure class="card" id="fig-egrowth">
+      <p class="t" id="egrowth-title">Growth and partisanship, period by period</p>
+      <p class="s">Top: mean annual growth of GDP per capita in each period, in per cent, with each year weighted by the days of the period that fall in it. Periods that include a year of war or occupation are left out. Bottom: net partisanship of the divide, in percentage points. A dot marks a period whose 80% interval lies above the random-label benchmark.</p>
+      <div class="legend" id="egrowth-legend"></div>
+      <div class="chart" id="egrowth-chart"></div>
+      <div class="chart" id="enet-chart"></div>
+    </figure>
+    </details>
     <p class="note" id="econ-src"></p>
   </section>
 
@@ -800,42 +987,12 @@ nav.toc { gap: 0.4rem 1.2rem; }
     </figure>
   </section>
 
-  <div class="chapter" id="documentation">
-    <p class="chapter-kicker">06 / Documentation</p>
-    <p class="chapter-name">How to read the evidence</p>
-    <p class="chapter-sub">Definitions, uncertainty, coverage, limitations, sources and citation.</p>
-  </div>
-
-  <section id="method" class="method">
-    <h2>Methods, limitations and data</h2>
-    <h3>Partisanship</h3>
-    <p>The measure follows Gentzkow, Shapiro and Taddy (2019, <i>Econometrica</i>). Each speech is linked to its speaker and party, cleaned and split into two-word phrases, after stemming and removing common words. Phrases without political content are left out: procedural formulas, courtesies and titles, names of people, parties and groups, amounts and dates. A law with its year and an age can remain, as in “67 ans”. For each period, a penalized statistical model estimates how often each group uses each phrase. The estimates for the main divides adjust for gender and province. From them we compute how well a single phrase identifies a speaker’s political group, where 50% is chance. We estimate the same model after shuffling the group labels at random, which gives a benchmark for chance and estimation noise, and subtract it. Shaded bands show the middle 80% of the estimates from random subsamples with one fifth of the speakers of each period. These <strong>subsampling ranges</strong> show how much an estimate moves with the speakers included. A change across periods needs the uncertainty of the <em>difference between periods</em>, which the ranges of single periods do not give.</p>
-    <p><strong>How to interpret the results.</strong> A net estimate of +0.50 percentage points means that the model’s classification score exceeds the random-label benchmark by half a percentage point. It measures how distinctive the wording is. Levels and trends can reflect shifts in topic, language, individual speakers, party membership, OCR coverage or the conventions of parliamentary reporting. Pairwise comparisons are symmetric, so they cannot say which party changed direction. Comparisons over time describe the series as they are, with all these compositional changes included.</p>
-    <p><strong>Limits of inference.</strong> Most intervals in the descriptive panels are speaker-subsampling ranges. Some differences in the question box combine the ranges of single periods as if they were independent, although the same speakers appear in several periods. Many party pairs and events are compared, and the 80% intervals are not adjusted for multiple testing. The event-study section reports which results keep a false discovery rate below 10%.</p>
-    <ul>
-      <li>Periods group parliamentary sessions (usually around two years). Shaded columns mark limited coverage of sittings in 1832–1843 and 1992–1995. Apparent changes in these years may partly reflect missing records.</li>
-      <li>French and Dutch phrases are analysed separately and combined for the main historical divides. For comparisons between modern parties, Dutch and French are shown separately.</li>
-      <li>Left–right compares socialists and communists with liberals, N-VA and the radical right. Right–others compares the latter with all other parties. Flemish–Walloon compares members of the same parties, in French only, so it ends when the national parties split along language lines (1968–1978). Women–men compares women and men of the same party family.</li>
-      <li>Vertical lines mark plural voting (1894), proportional representation (1900), equal male suffrage (1919), women's suffrage (1949), the split of the national parties (1968–1978) and the federal Chamber (1995).</li>
-      <li>Minimum speakers per side: 20 for the main divides, 15 for party-family and topic comparisons, <span class="nmin-n">10</span> for individual party pairs, and 8 for the comparisons of today’s parties against the rest. Periods below these minimums are left blank.</li>
-      <li>For party pairs, the direct score is symmetric: A versus B equals B versus A. It cannot show which party moved.</li>
-    </ul>
-    <h3>Topics</h3>
-    <p>A companion module assigns a topic to every speech. A language model (gpt-6-luna) first labels agenda items from a sample of sittings, together with the subject keywords of the legislative files. These labels are grouped into 23 topics and a residual category for procedure. The language model then labels samples of passages of up to 300 words with this codebook. Two classifiers trained on those labels, CamemBERT for French and RobBERT-2023 for Dutch, classify all 3.1 million passages of the corpus. On passages held out from training, they give the language model’s label in 74% of cases. Each speech takes the topic with the highest mean probability across its passages, so a speech that covers several topics is counted under its main one. The 24 categories are grouped into nine policy areas. Partisanship by topic is estimated by legislature within the speeches of each topic or area, with the same model and random-label benchmark as the main series. These estimates have no intervals, so single legislatures are only indicative.</p>
-    <h3>Reactions and emotions</h3>
-    <p>A second module reads the stage directions written by the stenographers: disorder (interruptions, noise, protests and uproar), approval and laughter, and the chair’s calls to order and censures. Rates are per 100,000 words spoken by members, the chair excluded, or per 100 sittings. The module also finds references by name from one member to another, links them to members and ministers, and records whether they cross party families or language communities, compared with the share expected if speakers and targets were paired at random. These measures need no language model and cover the whole period. For the investiture and State of the Union debates since 1961, they give intervention counts close to those of Peeters and Lefever (2026) in most debates and similar shares of references across the language border. The coding of emotions in the speeches (eight categories, such as anger and fear) and of the tone of references (no attack, civil attack, uncivil attack) is in preparation: a language model has labelled samples of passages, two human coders will check part of them, and a multilingual classifier will extend the labels to all speeches.</p>
-    <h3>Roll-call votes</h3>
-    <p>Roll-call votes are read from the same reports, which list the members voting yes, no or abstaining, and are linked to the member register. For each roll call, <strong>between-group voting distance</strong> is the absolute difference between the two groups’ shares of “yes” votes among the “yes” and “no” votes cast: |Yes<sub>A</sub>/(Yes<sub>A</sub>+No<sub>A</sub>) − Yes<sub>B</sub>/(Yes<sub>B</sub>+No<sub>B</sub>)|. Abstentions are excluded, and so are roll calls without enough votes for or against in both groups. Zero means identical yes shares, and one means unanimously opposed votes. The period measure averages this distance over the roll calls that qualify. Periods with fewer than 20 roll calls are excluded. The groups are those of the speech series: Catholics, the left, the right and the government against all others, the left against the right, pairs of parties since 1979, women and men of the same party, and, until the national parties split, members of the same party elected in Flemish and in Walloon districts. The paper reports the Catholic, left and government comparisons. The others follow the same rules.</p>
-    <h3>Data</h3>
-    <p>The dataset uses available official plenary reports of the Belgian Chamber of Representatives, 1831–2025: the <i>Annales parlementaires</i> and, from 1999, the integral reports (CRIV). Text is segmented into speeches and linked to speakers, parties and constituencies where identified. Coverage is incomplete in some historical periods, as noted above.</p>
-    <h3>Cite</h3>
-    <p class="cite">Graziani, Riccardo. 2026. “Partisanship in Belgian Parliamentary Speech: Evidence from the Chamber of Representatives, 1831–2025.” Working paper, KU Leuven.</p>
-  </section>
 </main>
 
 <footer class="colophon wrap">
   <p class="rule" id="foot-updated"></p>
   <p>VIVES Research Centre, KU Leuven, Leuven, Belgium &nbsp;||&nbsp; <a href="mailto:riccardo.graziani@kuleuven.be">riccardo.graziani@kuleuven.be</a></p>
+  <p class="cite-foot">Cite: Graziani, Riccardo. 2026. “Partisanship in Belgian Parliamentary Speech: Evidence from the Chamber of Representatives, 1831–2025.” Working paper, KU Leuven.</p>
   <p>© 2026 Riccardo Graziani. All rights reserved.</p>
 </footer>
 
@@ -1166,6 +1323,9 @@ nav.toc { gap: 0.4rem 1.2rem; }
     const vmax = cfg.vmax;
     const color = (v) => (v <= 0 ? css('--neutral') : steps[Math.min(steps.length - 1, Math.floor((v / vmax) * steps.length))]);
     const dark = (v) => v > 0 && Math.floor((v / vmax) * steps.length) >= 4;
+    // the number in each cell: smaller type in small cells, and without the leading zero below 36 px (".12")
+    const cellFont = Math.max(8.5, Math.min(11, Math.round(cs * 0.6) / 2));
+    const cellLab = (v) => (cs < 36 ? f2(v).replace(/^([−-]?)0\./, '$1.') : f2(v));
     rowsK.forEach((kr, i) => {
       svg.append('text').attr('x', ml - 8).attr('y', i * cs + cs / 2).attr('dy', '0.32em').attr('text-anchor', 'end').text(cfg.name(kr));
       colsK.forEach((kc, j) => {
@@ -1179,8 +1339,8 @@ nav.toc { gap: 0.4rem 1.2rem; }
         if (sel) svg.append('rect').attr('x', gx + 1).attr('y', gy + 1).attr('width', cs - 2).attr('height', cs - 2).attr('rx', 3)
           .attr('fill', 'none').attr('stroke', css('--ink')).attr('stroke-width', 2).attr('pointer-events', 'none');
         if (!c) return;
-        if (cs >= 40) svg.append('text').attr('x', gx + cs / 2).attr('y', gy + cs / 2).attr('dy', '0.32em').attr('text-anchor', 'middle')
-          .style('fill', dark(c.v) ? '#FFFFFF' : css('--ink')).style('font-size', '11px').attr('pointer-events', 'none').text(f2(c.v));
+        svg.append('text').attr('x', gx + cs / 2).attr('y', gy + cs / 2).attr('dy', '0.32em').attr('text-anchor', 'middle')
+          .style('fill', dark(c.v) ? '#FFFFFF' : css('--ink')).style('font-size', `${cellFont}px`).attr('pointer-events', 'none').text(cellLab(c.v));
         if (c.sig) svg.append('circle').attr('cx', gx + cs - 6).attr('cy', gy + 6).attr('r', 2.6).attr('pointer-events', 'none')
           .attr('fill', dark(c.v) ? '#FFFFFF' : css('--ink'));
         const label = `${cfg.name(kc)} – ${cfg.name(kr)}`;
@@ -1229,12 +1389,20 @@ nav.toc { gap: 0.4rem 1.2rem; }
   // ---------------------------------------------------------------- header
   function header() {
     const pk = D.peaks || {};
-    const names = ['rel_main', 'lr_main', 'gov_main'].map((id) => D.divisions.find((d) => d.id === id)).filter(Boolean).map((d) => [d.id, `the ${d.name.toLowerCase()} divide`]);
-    const items = names.filter(([key]) => pk[key]).map(([key, n]) => `${n} is highest in the ${pk[key][0]}s`);
-    const join = (a) => (a.length > 1 ? `${a.slice(0, -1).join(', ')} and ${a[a.length - 1]}` : a[0]);
-    document.getElementById('lead').textContent = items.length
-      ? `How distinctive has the language of Belgian parliamentary groups been? This dashboard documents historical differences in wording: ${join(items)} among the decades observed.`
-      : 'How much does the way members speak reveal their side?';
+    document.getElementById('lead').textContent = 'How easy is it to tell Belgian parliamentary groups apart from the words they use? This dashboard follows the question through the debates of the Chamber of Representatives from 1831 to 2025, for seven ways of dividing its members.';
+    // the worked example: the highest score of the three main divides, and a real period next to its benchmark
+    const mainDv = D.divisions.filter((d) => ['rel_main', 'lr_main', 'gov_main'].includes(d.id));
+    const realMax = d3.max(mainDv, (d) => d3.max(d.rows, (r) => r[1]));
+    if (realMax != null) document.getElementById('toy-max').textContent = `at most ${d3.format('.1f')(realMax)}%`;
+    const gv = D.divisions.find((d) => d.id === 'gov_main');
+    const top = gv ? d3.greatest(gv.rows.filter((r) => r[1] != null && r[4] != null), (r) => r[1] - r[4]) : null;
+    if (top) document.getElementById('toy-real').textContent = `For example, government and opposition score ${d3.format('.2f')(top[1])}% in ${perLabel(top[0])}, against ${d3.format('.2f')(top[4])}% with shuffled labels: net partisanship is ${ppx(top[1] - top[4], 2)}, the highest of this divide.`;
+    const B = (D.context && D.context.compare && D.context.compare.belgium) || [];
+    const tops = B.map((b) => d3.max(b.peaks, (r) => r[1])).filter((v) => v != null);
+    if (tops.length) {
+      const lo = Math.round(d3.min(tops)), hi = Math.round(d3.max(tops));
+      document.getElementById('find-minute').textContent = lo === hi ? `${hi}%` : `${lo}–${hi}%`;
+    }
     const k = document.getElementById('kpis');
     const tiles = [
       [`${D.facts.first}–${D.facts.last}`, 'Debates of the Belgian Chamber of Representatives'],
@@ -3191,8 +3359,18 @@ nav.toc { gap: 0.4rem 1.2rem; }
 
   // one section that cannot be drawn (missing data) does not stop the others
   const safely = (f) => { try { f(); } catch (e) { console.error(`${f.name}:`, e); } };
-  const drawAll = () => [header, divides, divideGrid, compareSection, families, membersSection, mpIndex, parties, today, votesSection, institutionsSection, eventStudies, economy, regions, topics, agenda, words, emotions, questionBox].forEach(safely);
+  // a panel of secondary results is hidden when everything in it is hidden (missing data)
+  const tidyMore = () => document.querySelectorAll('details.more').forEach((d) => {
+    d.hidden = ![...d.children].some((c) => c.tagName !== 'SUMMARY' && !c.hidden);
+  });
+  const drawAll = () => { [header, divides, divideGrid, compareSection, families, membersSection, mpIndex, parties, today, votesSection, institutionsSection, eventStudies, economy, regions, topics, agenda, words, emotions, questionBox].forEach(safely); tidyMore(); };
   drawAll();
+  // charts in a closed panel have no width: they are drawn again when the panel opens
+  document.querySelectorAll('details.more').forEach((d) => d.addEventListener('toggle', () => { if (d.open) drawAll(); }));
+  document.querySelectorAll('a[data-doc]').forEach((a) => a.addEventListener('click', () => {
+    const d = document.getElementById(a.dataset.doc);
+    if (d) d.open = true;
+  }));
   let lastW = document.documentElement.clientWidth, timer = null;
   window.addEventListener('resize', () => {
     const w = document.documentElement.clientWidth;

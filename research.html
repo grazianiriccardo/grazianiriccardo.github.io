@@ -11,7 +11,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Research | Riccardo Graziani</title>
-  <meta name="description" content="Working papers, data papers and work in progress by Riccardo Graziani on parliamentary speech, electoral reform and political representation in Belgium.">
+  <meta name="description" content="Working papers, data papers and work in progress by Riccardo Graziani on parliamentary speech, electoral reform and political representation in Belgium and the Netherlands.">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Research | Riccardo Graziani">
   <meta name="theme-color" content="#FFFFFF">
@@ -214,6 +214,7 @@ a:focus-visible, summary:focus-visible {
   font-size: 0.9375rem;
 }
 .colophon p { margin: 0; }
+.colophon p + p { margin-top: 0.35rem; }
 .colophon a { color: var(--muted); }
 
 /* Telefono: una colonna sola */
@@ -377,10 +378,37 @@ a:focus-visible, summary:focus-visible {
           </details>
         </article>
 
+        <h2 class="group">Selected Work in progress</h2>
+        <article class="paper">
+          <h3 class="paper-title"><a href="Graziani_Information_or_Accountability_long_abstract.pdf">Information or Accountability? The 1869 Repeal of the Dutch Newspaper Stamp and Parliamentary Speech</a></h3>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Legislators follow the press, but it is not known why. Newspapers may be a cheap source of information about a world that legislators cannot otherwise observe, or they may reach the people to whom legislators are electorally accountable. In modern democracies the readers of newspapers and the voters are largely the same people, so the two explanations are observationally equivalent. This paper separates them in a setting where readers and voters were different populations: the Netherlands between 1850 and 1888.</p>
+            <p>On 1 July 1869 the Dutch state abolished the <em>dagbladzegel</em>, the stamp duty levied on every copy of a newspaper, together with the duty on advertisements. The stamp had taken up to 57 per cent of a subscription price, and its repeal opened the way for cheaper titles and a reading public that grew over the following decade. The franchise did not move: the electoral law of 1850 fixed a tax census by statute, and until the revision of 1887 only about one adult man in eight or nine could vote. Whatever cheaper newspapers did to Dutch politics, they did it to a parliament whose electorate had not changed, in front of a reading public that by law largely could not vote.</p>
+            <p>The Dutch parliament also offers a natural comparison. The Tweede Kamer was elected directly by the census voters, half of it renewed every two years. The Eerste Kamer, chosen by the Provincial States from the most heavily assessed taxpayers for nine-year terms, read the same newspapers and debated the same bills, but its members did not face voters. If legislators respond to the press because its readers can sanction them, the repeal should change speech in the lower chamber more than in the upper one, more among members facing re-election soon, and more towards the titles that voters read. If the press matters as a source of information, the response should not depend on electoral exposure.</p>
+            <p>The paper builds two new corpora. The first covers the proceedings of both chambers from 1847 to 1889, about 5,400 sittings and 65,000 pages of OCR text from Staten-Generaal Digitaal, segmented into speeches and linked to members through their service records, with the accuracy of attribution measured on a blind-coded sample. The second is an article-level corpus of the digitised Dutch press for 1848–1879 from the open archive of the Koninklijke Bibliotheek, restricted to titles observed on both sides of the reform. Speeches and articles are classified into policy areas with a transformer model adapted to nineteenth-century Dutch and trained on hand-coded data; the main outcome measures how closely each speech follows the topics the press covered in the preceding month.</p>
+            <p>The empirical strategy compares the two chambers before and after July 1869 in an event-study design, with member and period fixed effects absorbing the media environment and the composition of each chamber. Because only two chambers are compared, inference relies on placebo dates rather than conventional clustering. Comparisons within the lower chamber (members due for re-election against those just elected, the same bill debated in both chambers, established titles against cheap ones) sharpen the mechanism, and the entry of newspapers across electoral districts provides a second source of variation. The design addresses the main threats directly: the periodic election held three weeks before the reform, the simultaneous repeal of the advertisement duty, and differences in the quality of the printed record.</p>
+            <p>The answer matters beyond the nineteenth century. If legislators follow the press because of its readers’ votes, much of what is attributed to media influence on politics is a statement about electoral accountability, and it should vary with electoral institutions — a prediction that bears directly on current debates about the decline of local news and political responsiveness.</p>
+          </details>
+        </article>
+        <article class="paper">
+          <h3 class="paper-title"><a href="Graziani_Voice_of_the_Voiceless_long_abstract.pdf">Voice of the Voiceless: Franchise Extension, the Press and Parliamentary Speech in the Netherlands, 1888–1925</a></h3>
+          <details class="abstract">
+            <summary>Abstract</summary>
+            <p>Long before they could vote, industrial workers and, later, women had newspapers that spoke on their behalf. The political economy of democratisation explains who obtained the vote and what followed, but it rarely asks who had a voice before the vote, or what enfranchisement changed for groups whose claims were already being made in print. This paper studies that question in the Netherlands, where the electorate was enlarged in stages between 1888 and 1922 while the press had been free of taxation since 1869.</p>
+            <p>The constitutional revision of 1887 roughly doubled the number of registered voters, from about 135,000 to 292,000 at the election of March 1888, and redrew the country into 84 districts. The electoral law of 1896 nearly doubled the electorate again, to about 537,000 at the election of June 1897, by adding voters qualified through rent, wages, savings or examinations. Universal male suffrage and proportional representation followed with the revision of 1917, and women voted for the first time in 1922. None of these reforms changed the price of news, so they reverse the logic of the 1869 repeal of the newspaper stamp: the electorate changes while the press stays the same.</p>
+            <p>If legislators follow the press because its readers can vote, enlarging the reading electorate should raise responsiveness most where newspapers already reached the newly enfranchised. The paper tests two predictions. First, franchise extensions should raise district representatives’ attention to the press and to the issues of the new voters (labour, housing, poor relief, public health and the franchise itself) in proportion to how much each reform enlarged the local electorate, and more so where newspapers were present before the reform. Second, enfranchisement may change the form of representation more than its volume: parliament may come to take up the specific claims the press had made on a group’s behalf, rather than simply mention the group more often.</p>
+            <p>The empirical strategy exploits the fact that the reforms enlarged the electorate by very different amounts across districts, depending on the local distribution of taxes, rents and occupations. Districts that gained many voters are compared with districts that gained few, before and after each reform, in a difference-in-differences design with a continuous treatment. The preferred measure of the treatment is the increase in eligibility that the new rules imply for each district’s pre-reform population, so that it does not reflect the party and newspaper mobilisation that drove registration; the registered electorate serves as a check. The reform of 1897, which left almost all district boundaries unchanged, provides the cleanest comparison; for 1888, outcomes are mapped onto common boundaries through the municipalities that made up each district. After 1918, when proportional representation abolished the districts, the paper traces descriptively how the gap between what the press demanded for each group and what parliament discussed moved around the enfranchisement of all men and of women.</p>
+            <p>The analysis rests on a speaker-linked corpus of the proceedings of both chambers from 1880 to 1926, built from the OCR of Staten-Generaal Digitaal, joined to district election returns (Huygens ING, Kiesraad), municipal censuses and tax series, and the digitised Dutch press. Speeches and articles are classified into policy areas with a model adapted to historical Dutch, and the representation gap of each group is measured with lexicons that are re-estimated for each decade, so that changes in vocabulary are not mistaken for changes in representation.</p>
+            <p>Together with its companion paper on the 1869 repeal of the newspaper stamp, the paper tests the same mechanism from opposite directions: first the price of news changes with the electorate fixed, then the electorate changes with the price of news fixed.</p>
+          </details>
+        </article>
+
       </section>
 
       <footer class="colophon">
         <p>VIVES Research Centre, KU Leuven, Leuven, Belgium &nbsp;||&nbsp; <a href="mailto:riccardo.graziani@kuleuven.be">riccardo.graziani@kuleuven.be</a></p>
+        <p>© 2026 Riccardo Graziani. All rights reserved.</p>
       </footer>
 
     </div>
